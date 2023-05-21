@@ -14,8 +14,49 @@ def cuadro():
 
     print(f"{Cursor.POS(24, y-1)}{linea}")
 
-def menu_lenguajes(nombre_usuario):
+def menu_lecciones(leccion):
+    menuT = ["Intro", "Python", "C"]
+    print(f"{menuT[leccion]}")
+    time.sleep(2)
     return 0
+
+def menu_lenguajes(id):
+    with open("cuentas.json", "r") as datos:
+        datos_json = json.load(datos)
+        nombre_usuario = datos_json["cuentas"][id]["nombre"]
+        datos.close()
+
+    menu = ["Introducción a los lenguajes","Python", "C", "Salir"]
+    linea = "____________________________________________________________________"
+    posicion, tecla = 0, 0
+    while True:
+        os.system("cls")
+        cuadro()
+        y = 9
+        for i in range(len(menu)):
+            if posicion == i: print(f"{Cursor.POS(25, y)}{Back.LIGHTCYAN_EX}{Fore.BLACK}{menu[i]}")
+            else: print(f"{Cursor.POS(25, y)}{menu[i]}")
+            if i < len(menu)-1: print(f"{Cursor.POS(70, y)}Progreso: {datos_json['cuentas'][id]['lecciones'][i]}%")
+            y += 4
+
+        print(f"{Cursor.POS(25, 3)}Bienvenido {nombre_usuario}")
+        print(f"{Cursor.POS(24, 4)}{linea}")
+        print(f"{Cursor.POS(45, 6)}SELECCIONA UN LENGUAJE");
+        tecla = ord(msvcrt.getch())
+        match tecla:
+            case 80:
+                posicion += 1
+                if posicion > len(menu)-1: posicion = 0
+
+            case 72:
+                posicion -= 1
+                if posicion < 0: posicion = len(menu)-1
+
+            case 13:
+                if posicion == len(menu)-1:
+                    return 0
+                
+                menu_lecciones(posicion)
 
 def logup():
     menu = ["Nombre", "Ingresa correo", "Ingresa una contraseña", "Confirma tu contraseña", "Continuar", "Regresar"]
@@ -69,7 +110,7 @@ def logup():
                     case 4:
                         if nombre != " " and correo != " " and contra != " " and confirmar_contra != " ":
                             if contra == confirmar_contra:
-                                datos = {"nombre": nombre, "correo": correo, "contra": contra}
+                                datos = {"nombre": nombre, "correo": correo, "contra": contra, "lecciones": [0, 0, 0]}
                                 with open("cuentas.json", "r") as file:
                                     datos_json = json.load(file)
                                     ubicacion = datos_json["cuentas"]
@@ -147,7 +188,7 @@ def login():
                             datos_json = json.load(verificar)
                             for i in range(len(datos_json["cuentas"])):
                                 if correo == datos_json["cuentas"][i]["correo"] and contra == datos_json["cuentas"][i]["contra"]:
-                                    menu_lenguajes(datos_json["cuentas"][i]["nombre"])
+                                    menu_lenguajes(i)
                                     correo = " "
                                     contra = " "
                                     posicion = 0
@@ -163,6 +204,7 @@ def login():
 
 def main():
     init(autoreset=True)
-    login()
+    #login()
+    menu_lenguajes(0)
 
 main()

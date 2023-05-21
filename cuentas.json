@@ -3,8 +3,17 @@
         {
             "nombre": "Alan",
             "correo": "alancr612@gmail.com",
-            "contra": "1234"
+            "contra": "1234",
+            "lecciones": [
+                0,
+                0,
+                0
+            ]
         }
     ],
-    "lecciones": []
+    "lecciones":[
+        3,
+        3,
+        3
+    ]
 }
