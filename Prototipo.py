@@ -13,12 +13,53 @@ def cuadro():
         y += 1
 
     print(f"{Cursor.POS(24, y-1)}{linea}")
+    print(f"{Cursor.POS(18, y+1)}Mover cursor: Arriba / Abajo | Entrar: Enter | Cambiar Pág: Izquierda / Derecha")
 
-def menu_lecciones(leccion):
-    menuT = ["Intro", "Python", "C"]
-    print(f"{menuT[leccion]}")
-    time.sleep(2)
-    return 0
+def ver_leccion(lenguaje, leccion, id):
+    return 0;
+
+def menu_lecciones(lenguaje, id):
+    with open("cuentas.json", "r") as datos:
+        datos_json = json.load(datos)
+        nombre_usuario = datos_json["cuentas"][id]["nombre"]
+        c_lecciones = datos_json["lecciones"][lenguaje]
+        datos.close()
+
+    menu = []
+    for i in range(c_lecciones):
+        texto = "Lección " + str(i+1)
+        menu.append(texto)
+
+    menu.append("Salir")
+    posicion, tecla = 0, 0
+    linea = "____________________________________________________________________"
+    while True:
+        os.system("cls")
+        cuadro()
+        print(f"{Cursor.POS(25, 3)}Bienvenido {nombre_usuario}")
+        print(f"{Cursor.POS(24, 4)}{linea}")
+        print(f"{Cursor.POS(45, 6)}SELECCIONA UNA LECCIÓN")
+        y = 7
+        for i in range(len(menu)):
+            if posicion == i: print(f"{Cursor.POS(25, y)}{Back.LIGHTCYAN_EX}{Fore.BLACK}{menu[i]}")
+            else: print(f"{Cursor.POS(25, y)}{menu[i]}")
+            y+=2
+        
+        tecla = ord(msvcrt.getch())
+        match tecla:
+            case 80:
+                posicion += 1
+                if posicion > len(menu)-1: posicion = 0
+
+            case 72:
+                posicion -= 1
+                if posicion < 0: posicion = len(menu)-1
+
+            case 13:
+                if posicion == len(menu)-1:
+                    return 0
+                
+                ver_leccion(lenguaje, posicion, id)
 
 def menu_lenguajes(id):
     with open("cuentas.json", "r") as datos:
@@ -56,7 +97,7 @@ def menu_lenguajes(id):
                 if posicion == len(menu)-1:
                     return 0
                 
-                menu_lecciones(posicion)
+                menu_lecciones(posicion, id)
 
 def logup():
     menu = ["Nombre", "Ingresa correo", "Ingresa una contraseña", "Confirma tu contraseña", "Continuar", "Regresar"]
