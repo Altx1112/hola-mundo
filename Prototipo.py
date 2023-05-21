@@ -5,16 +5,16 @@ import os
 import time
 
 def cuadro():
-    linea = "_________________________________________________________________"
+    linea = "____________________________________________________________________"
     y = 3
-    print(f"{Cursor.POS(25, 2)}{linea}")
+    print(f"{Cursor.POS(24, 2)}{linea}")
     for i in range(25):
-        print(f"{Cursor.POS(24, y)}|{Cursor.POS(90, y)}|")
+        print(f"{Cursor.POS(23, y)}|{Cursor.POS(92, y)}|")
         y += 1
 
-    print(f"{Cursor.POS(25, y-1)}{linea}")
+    print(f"{Cursor.POS(24, y-1)}{linea}")
 
-def menu_lenguajes():
+def menu_lenguajes(nombre_usuario):
     return 0
 
 def logup():
@@ -29,15 +29,15 @@ def logup():
         cuadro()
         y = 5
         for i in range(len(menu)):
-            if posicion == i: print(f"{Cursor.POS(27, y)}{Back.LIGHTCYAN_EX}{Fore.BLACK}{menu[i]}")
-            else: print(f"{Cursor.POS(27, y)}{menu[i]}")
+            if posicion == i: print(f"{Cursor.POS(25, y)}{Back.LIGHTCYAN_EX}{Fore.BLACK}{menu[i]}")
+            else: print(f"{Cursor.POS(25, y)}{menu[i]}")
             y += 4
 
         print(f"{Cursor.POS(52, 4)}CREA UNA CUENTA")
-        print(f"{Cursor.POS(27, 7)}{nombre}")
-        print(f"{Cursor.POS(27, 11)}{correo}")
-        print(f"{Cursor.POS(27, 15)}{contra}")
-        print(f"{Cursor.POS(27, 19)}{confirmar_contra}")
+        print(f"{Cursor.POS(25, 7)}{nombre}")
+        print(f"{Cursor.POS(25, 11)}{correo}")
+        print(f"{Cursor.POS(25, 15)}{contra}")
+        print(f"{Cursor.POS(25, 19)}{confirmar_contra}")
         tecla = ord(msvcrt.getch())
         match tecla:
             case 80:
@@ -51,20 +51,20 @@ def logup():
             case 13:
                 match posicion:
                     case 0:
-                        print(f"{Cursor.POS(27, 7)}                      ")
-                        nombre = str(input(f"{Cursor.POS(27, 7)}"))
+                        print(f"{Cursor.POS(25, 7)}                      ")
+                        nombre = str(input(f"{Cursor.POS(25, 7)}"))
 
                     case 1:
-                        print(f"{Cursor.POS(27, 11)}                      ")
-                        correo = str(input(f"{Cursor.POS(27, 11)}"))
+                        print(f"{Cursor.POS(25, 11)}                      ")
+                        correo = str(input(f"{Cursor.POS(25, 11)}"))
 
                     case 2:
-                        print(f"{Cursor.POS(27, 15)}                      ")
-                        contra = str(input(f"{Cursor.POS(27, 15)}"))
+                        print(f"{Cursor.POS(25, 15)}                      ")
+                        contra = str(input(f"{Cursor.POS(25, 15)}"))
 
                     case 3:
-                        print(f"{Cursor.POS(27, 19)}                      ")
-                        confirmar_contra = str(input(f"{Cursor.POS(27, 19)}"))
+                        print(f"{Cursor.POS(25, 19)}                      ")
+                        confirmar_contra = str(input(f"{Cursor.POS(25, 19)}"))
                     
                     case 4:
                         if nombre != " " and correo != " " and contra != " " and confirmar_contra != " ":
@@ -93,16 +93,17 @@ def logup():
                     case 5:
                         return 0
 
-
 def login():
     try:
         with open("cuentas.json", "r") as archivo:
             cuentas = json.load(archivo)
+            archivo.close()
 
     except:
         with open("cuentas.json", "w") as archivo:
             cuentas = {"cuentas": [], "lecciones":[]}
             json.dump(cuentas, archivo, indent=4)
+            archivo.close()
             login()
 
     correo = " "
@@ -114,13 +115,13 @@ def login():
         cuadro()
         y = 5
         for i in range(len(menu)):
-            if posicion == i: print(f"{Cursor.POS(27, y)}{Back.LIGHTCYAN_EX}{Fore.BLACK}{menu[i]}")
-            else: print(f"{Cursor.POS(27, y)}{menu[i]}")
+            if posicion == i: print(f"{Cursor.POS(25, y)}{Back.LIGHTCYAN_EX}{Fore.BLACK}{menu[i]}")
+            else: print(f"{Cursor.POS(25, y)}{menu[i]}")
             y += 4
 
         print(f"{Cursor.POS(52, 4)}BIENVENIDO")
-        print(f"{Cursor.POS(27, 7)}{correo}")
-        print(f"{Cursor.POS(27, 11)}{contra}")
+        print(f"{Cursor.POS(25, 7)}{correo}")
+        print(f"{Cursor.POS(25, 11)}{contra}")
         tecla = ord(msvcrt.getch())
         match tecla:
             case 80:
@@ -134,15 +135,28 @@ def login():
             case 13:
                 match posicion:
                     case 0:
-                        print(f"{Cursor.POS(27, 7)}                      ")
-                        correo = str(input(f"{Cursor.POS(27, 7)}"))
+                        print(f"{Cursor.POS(25, 7)}                      ")
+                        correo = str(input(f"{Cursor.POS(25, 7)}"))
 
                     case 1:
-                        print(f"{Cursor.POS(27, 11)}                      ")
-                        contra = str(input(f"{Cursor.POS(27, 11)}"))
+                        print(f"{Cursor.POS(25, 11)}                      ")
+                        contra = str(input(f"{Cursor.POS(25, 11)}"))
 
                     case 2:
-                        0
+                        with open("cuentas.json", "r") as verificar:
+                            datos_json = json.load(verificar)
+                            for i in range(len(datos_json["cuentas"])):
+                                if correo == datos_json["cuentas"][i]["correo"] and contra == datos_json["cuentas"][i]["contra"]:
+                                    menu_lenguajes(datos_json["cuentas"][i]["nombre"])
+                                    correo = " "
+                                    contra = " "
+                                    posicion = 0
+                                    break
+                                
+                                elif correo != datos_json["cuentas"][i]["correo"] or contra != datos_json["cuentas"][i]["contra"]:
+                                    print(f"{Cursor.POS(42, y)}Comprueba los datos ingresados")
+                                    time.sleep(2)
+                                    break
 
                     case 3:
                         logup()
