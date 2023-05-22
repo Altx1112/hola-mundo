@@ -1,0 +1,35 @@
+12345678901234567890123456789012345678901234567890123456789012345
+=================================================================
+==================| USO DE LA FUNCION SCANF:|====================
+=================================================================
+Es una de las funciones mas basicas, nos permite hacer entradas 
+de datos desde el teclado, requeire la biblioteca conio.h, 
+necesitamos indicar el dato a recibir usando %d para decimales
+%i para enteros, %c para caracteres, ademas se necesita la
+variable en que se guarda al entrada de datos:
+-----------------------------------------------------------------
+Sintaxis:
+scanf("%tipo de dato", &variable);
+-----------------------------------------------------------------
+=> Expliquemos: se usa la palabra reservada scanf, seguido de   |
+|parentesis que contiene el tipo de dato, una coma y el simbolo |
+|ampersand, seguido de la variable en que se va a guardar       |
+-----------------------------------------------------------------
+
+PANTALLA DE EJEMPLO:
+
+=================================================================
+==================| USO DE LA FUNCION SCANF:|====================
+=================================================================
+Ahora intentalo tu, observa el siguiente código y piensa
+¿que es lo que imprime?:
+-----------------------------------------------------------------
+Sintaxis:
+int Num;
+printf("Ingresa un numero: ");
+scanf("%d", &Num);
+
+-----------------------------------------------------------------
+=> RECUERDA ESCRIBIR TU PROGRAMA USANDO A MAIN COMO FUNCION	|
+| PRINCIPAL, EN ELLA INGRESA EL CODIGO MOSTRADO                 |
+-----------------------------------------------------------------

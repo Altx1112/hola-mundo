@@ -1,0 +1,13 @@
+Recordando la práctica pasada, ahora ¿Cuál es el resultado de
+este código?
+
+nombre = "Raul"
+edad = 18
+print("Me llamo " + nombre + " y tengo " + edad + " años")
+
+-----------------------------------------------------------------
+
+A) "Me llamo " + nombre + " y tengo " + edad + " años"
+B) Me llamo nombre tengo edad años
+C) Da error
+D) Me llamo Raul y tengo 18 años

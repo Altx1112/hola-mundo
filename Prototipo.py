@@ -4,7 +4,7 @@ import json
 import os
 import time
 
-def cuadro():
+def cuadro(): #Cuadro que se ve en pantalla con las instrucciones de uso
     linea = "____________________________________________________________________"
     y = 3
     print(f"{Cursor.POS(24, 2)}{linea}")
@@ -15,8 +15,112 @@ def cuadro():
     print(f"{Cursor.POS(24, y-1)}{linea}")
     print(f"{Cursor.POS(18, y+1)}Mover cursor: Arriba / Abajo | Entrar: Enter | Cambiar Pág: Izquierda / Derecha")
 
-def ver_leccion(lenguaje, leccion, id):
-    return 0;
+def ver_leccion(lenguaje, leccion, id): #Imprime la lección en base a los archivos de texto
+    with open("cuentas.json", "r") as datos: 
+        datos_json = json.load(datos)
+        nombre_usuario = datos_json["cuentas"][id]["nombre"]
+        datos.close()
+
+    match lenguaje: #Nos da la ruta dependiendo de la lección que querramos ver y las respuestas de cada práctica
+        case 0:
+            ruta = "lecciones/introduccion/"
+
+        case 1:
+            ruta = "lecciones/Python/"
+            ruta_practicas = "practicas/Python/"
+            match leccion:
+                case 0:
+                    respuesta = 0
+
+                case 1:
+                    respuesta = 3
+
+                case 2:
+                    respuesta = 0
+
+                case 3:
+                    respuesta = 2
+
+        case 2:
+            ruta = "lecciones/C/"
+            ruta_practicas = "practicas/C/"
+
+    abrir_leccion = str(ruta) + "leccion_" + str(leccion+1) + ".txt" #Conjunta la ruta con el archivo correspondiente
+    if lenguaje > 0: #Si es Python o C, Introducción es puro texto
+        abrir_practica = str(ruta_practicas) + "practica_" + str(leccion+1) + ".txt"
+        with open(abrir_practica, "r") as archivo_practica:
+            texto_practica = archivo_practica.readlines()
+            archivo_practica.close()
+    
+    with open(abrir_leccion, "r") as archivo_leccion:
+        texto_leccion = archivo_leccion.readlines()
+        archivo_leccion.close()
+
+    linea = "____________________________________________________________________"
+    posicion, tecla, posicion_pagina, posicion_inciso = 0, 0, False, len(texto_practica)-4 #posicion_inicio empieza en los últimos 4 lugares de la lista del texto de práctica
+    while True:
+        os.system("cls")
+        cuadro()
+        print(f"{Cursor.POS(25, 3)}Bienvenido {nombre_usuario}")
+        print(f"{Cursor.POS(24, 4)}{linea}")
+        print(f"{Cursor.POS(25, 5)}{texto_leccion[0]}")
+        y = 7
+        if not posicion_pagina: #Si lección
+            print(f"{Cursor.POS(83, 3)}Lección")
+            for i in range(1, len(texto_leccion)):
+                print(f"{Cursor.POS(25, y)}{texto_leccion[i]}")
+                y += 1
+
+        else: #Si práctica
+            print(f"{Cursor.POS(83, 3)}Práctica")
+            for i in range(len(texto_practica)-4): #Imprime la parte de arriba y la línea
+                print(f"{Cursor.POS(25, y)}{texto_practica[i]}")
+                y += 1
+
+            for inciso in range(4): #Imprime los incisos
+                if inciso == posicion: print(f"{Cursor.POS(25, y)}{Back.LIGHTCYAN_EX}{Fore.BLACK}{texto_practica[inciso+posicion_inciso]}")
+                else: print(f"{Cursor.POS(25, y)}{texto_practica[inciso+posicion_inciso]}")
+                y += 2
+
+        tecla = ord(msvcrt.getch())
+        match tecla:
+            case 80: #Abajo
+                if posicion_pagina:
+                    posicion += 1
+                    if posicion > 3: posicion = 0
+
+            case 72: #Arriba
+                if posicion_pagina:
+                    posicion -= 1
+                    if posicion < 0: posicion = 3
+
+            case 75: #izquierda
+                if posicion_pagina: posicion_pagina = False
+                else: posicion_pagina = True
+
+            case 77: #Derecha
+                if posicion_pagina: posicion_pagina = False
+                else: posicion_pagina = True
+            
+            case 13: #Enter
+                if posicion_pagina: #Si andas en la práctica
+                    if posicion == respuesta: #Si contestaste bien
+                        print(f"{Cursor.POS(70, 25)}RESPUESTA CORRECTA")
+                        print(f"{Cursor.POS(65, 26)}HAZ COMPLETADO LA LECCIÓN {leccion+1}")
+                        if datos_json["cuentas"][id]["lecciones"][lenguaje] < leccion+1: #Si no habías completado la práctica, actualiza el json para marcarla
+                            datos_json["cuentas"][id]["lecciones"][lenguaje] += 1
+                            with open("cuentas.json", "w") as reemplazo:
+                                json.dump(datos_json, reemplazo, indent=4)
+                                reemplazo.close()
+
+                        time.sleep(2)
+                        return 0
+                    
+                    else:
+                        print(f"{Cursor.POS(48, y)}RESPUESTA INCORRECTA")
+                        time.sleep(2)
+
+        
 
 def menu_lecciones(lenguaje, id):
     with open("cuentas.json", "r") as datos:
@@ -58,8 +162,11 @@ def menu_lecciones(lenguaje, id):
             case 13:
                 if posicion == len(menu)-1:
                     return 0
-                
-                ver_leccion(lenguaje, posicion, id)
+                if posicion < datos_json["cuentas"][id]["lecciones"][lenguaje]+1:
+                    ver_leccion(lenguaje, posicion, id)
+
+                else:
+                    print(f"{Cursor.POS(25, y)}Debes completar las lecciones anteriores")
 
 def menu_lenguajes(id):
     with open("cuentas.json", "r") as datos:
@@ -73,6 +180,9 @@ def menu_lenguajes(id):
     while True:
         os.system("cls")
         cuadro()
+        print(f"{Cursor.POS(25, 3)}Bienvenido {nombre_usuario}")
+        print(f"{Cursor.POS(24, 4)}{linea}")
+        print(f"{Cursor.POS(45, 6)}SELECCIONA UN LENGUAJE");
         y = 9
         for i in range(len(menu)):
             if posicion == i: print(f"{Cursor.POS(25, y)}{Back.LIGHTCYAN_EX}{Fore.BLACK}{menu[i]}")
@@ -80,9 +190,6 @@ def menu_lenguajes(id):
             if i < len(menu)-1: print(f"{Cursor.POS(70, y)}Progreso: {datos_json['cuentas'][id]['lecciones'][i]}%")
             y += 4
 
-        print(f"{Cursor.POS(25, 3)}Bienvenido {nombre_usuario}")
-        print(f"{Cursor.POS(24, 4)}{linea}")
-        print(f"{Cursor.POS(45, 6)}SELECCIONA UN LENGUAJE");
         tecla = ord(msvcrt.getch())
         match tecla:
             case 80:
@@ -246,6 +353,7 @@ def login():
 def main():
     init(autoreset=True)
     #login()
-    menu_lenguajes(0)
+    #menu_lenguajes(0)
+    ver_leccion(1, 3, 0)
 
 main()

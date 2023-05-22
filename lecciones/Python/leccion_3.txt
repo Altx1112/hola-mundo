@@ -1,0 +1,21 @@
+             Uso de input y pedir datos al usuario
+Mientras que print nos permite comunicarnos mostrando datos al 
+usuario, input nos permite recibir informacion del usuario y 
+hacer uso de ella, es una herramienta muy util al momento de 
+pedir informacion, se puede especificar el tipo de dato que 
+solicitamos, por ejemplo una cadena de caracteres
+numeros enteros o decimales.
+
+Sintaxis: 
+input(texto_que_se_imprime_en_pantalla)
+tipo_de_dato(input(texto_que_se_imprime_en_pantalla))
+[str = "string" o cadena, que es una cadena de texto]
+[int = "integer" o entero, que es un número]
+
+Ejemplo:
+nombre = str(input("Ingrese un nombre ---> "))
+edad = int(input("Ingresa tu edad ---> "))
+print(nombre + ", " + edad)
+
+Output: (Suponiendo que se ingresa "Alan" y 18)
+Alan, 18

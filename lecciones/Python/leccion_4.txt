@@ -1,0 +1,21 @@
+                     Uso de condcional if y else
+if es una estructura que nos permite hacer acciones siempre y 
+cuando se cumpla una condicion, se pueden encadenar varios if 
+para hacer mas filtros.
+elif se usa para crear otra nueva condición dentro del mismo
+bloque de condiciones que inició el primer if.
+else se usa despues de todas las condicionales y ocurre si no ha 
+ocurrido ninguna de las condiciones.
+Aquí se usan en su mayoría operadores que conocerás de
+matemáticas, tales como <, > o = (En est caso se usa == porque
+un sólo igual significa asignar valor)
+
+Sintaxis:
+if condicion:
+    #código a ejecutar
+
+elif segunda_condicion:
+    #código a ejecutar
+
+else:
+    #código a ejecutar

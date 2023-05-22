@@ -1,0 +1,19 @@
+                            Variables
+Las variables se pueden entender como contenedores que 
+almacenaran valores que pueden cambiar, son una herramienta muy
+util para hacer a nuestro programa mas flexible y su valor 
+se puede modificar si lo queremos.
+Python es flexible en cuanto a qué puedes almacenar, desde
+texto, números enteros, con decimales o booleanos.
+Algo importante es que siempre declara tus variables antes de
+usarlas o habrá errores.
+
+Sintaxis: 
+Nombre_variable = valor
+
+Ejemplo:
+nombre = "Alan"
+print(nombre)
+
+Output:
+Alan

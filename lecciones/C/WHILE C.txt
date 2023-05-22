@@ -1,0 +1,39 @@
+12345678901234567890123456789012345678901234567890123456789012345
+=================================================================
+====================| USO DEL CICLO FOR: |=======================
+================================================================= 
+Cuando sabemos cuantas veces queremos repetir una accion en un 
+ciclo, usamos el For o For loop, este permite recorrer posiciones
+en un rango, sus sintaxis es la siguiente:
+-----------------------------------------------------------------
+Sintaxis:
+for (sentencia 1; sentencia 2; sentencia 3){
+	//Bloque de codigo que indica la acción.
+}
+-----------------------------------------------------------------
+=> Expliquemos: se usa la palabra reservada for, seguido de un  |
+|parentesis que contiene a tres sentencias, la primera indica de|
+|que posicion o condicion inicia el ciclo, la segunda indica su |
+|terminación, la tercera indica una acción, esta es el contador |
+|permite que el ciclo avance.					|
+-----------------------------------------------------------------
+
+PANTALLA DE EJEMPLO:
+
+=================================================================
+====================| USO DEL CICLO FOR: |=======================
+================================================================= 
+Ahora intentalo tu, en tu, observa el siguiente código y piensa
+¿que es lo que imprime?:
+-----------------------------------------------------------------
+Sintaxis:
+int i = 0;
+
+while (i < 5) {
+  printf("%d\n", i);
+  i++;
+}
+-----------------------------------------------------------------
+=> RECUERDA ESCRIBIR TU PROGRAMA USANDO A MAIN COMO FUNCION	|
+| PRINCIPAL, EN ELLA INGRESA EL CODIGO MOSTRADO                 |
+-----------------------------------------------------------------

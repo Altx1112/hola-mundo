@@ -1,0 +1,17 @@
+Esta ocasión no habrá ejemplo, por lo que...
+¿Cuál sería el output de este código?
+
+numero = 12:
+if numero < 10
+    print("Es menor que 10")
+
+elif numero == 13:
+    print("Es igual que 13")
+
+else:
+    print("Pues ni una ni la otra")
+-----------------------------------------------------------------
+A) Es menor que 10
+B) Es igual a 13
+C) Pues ni una ni la otra
+D) No imprime nada

@@ -1,0 +1,10 @@
+¿Qué mostrará en pantalla el siguiente codigo?
+
+print("Me llamo Alan")
+
+-----------------------------------------------------------------
+
+A) Me llamo Alan
+B) ("Me llamo Alan")
+C) "Me llamo Alan"
+D) (Me llamo Alan)

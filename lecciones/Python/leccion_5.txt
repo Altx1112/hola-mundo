@@ -1,0 +1,14 @@
+Uso de while: while es una herramienta que permite crear 
+un ciclo donde ciertas instrucciones se repetiran mientras
+se cumpla la condicion.
+Sintaxis:
+while identificador condicion:
+    Instrucciones
+¿Qué mostrará en pantalla el siguiente codigo?
+condicion = str(input("Ingresa x para salir del ciclo"));
+while condicion != x:
+    condicion = str(input("Ingresa x para salir del clico"));
+A:Un ciclo infinito que mostrara el texto hasta que se ingrese x
+B:Un ciclo que se repetira hasta que se llene la pantalla
+C:Un ciclo que iniciara al ingresar x
+D:Error

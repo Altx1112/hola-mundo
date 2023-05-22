@@ -1,0 +1,15 @@
+                          Uso de print
+Print nos permite mostrar cosas en la consola y comunicarnos 
+con el usuario, si deseamos imprimir texto este se debe de poner 
+entre comillas ("") para ser una cadena de caracteres. 
+También podemos imprimir variables que almacenen texto, valores 
+booleanos y numeros, estas no llevan comillas.
+
+Sintaxis:
+print(argumento)
+
+Ejemplo:
+print("Hola mundo")
+
+Output:
+Hola mundo

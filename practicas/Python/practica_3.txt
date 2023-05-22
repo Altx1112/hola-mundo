@@ -1,0 +1,14 @@
+Ya sabemos cómo pedir datos, suponga que el usuario ingresa
+primero "Ingeniería en Computación" y después 2
+
+carrera = str(input("¿Qué carrera estás cursando? ---> ")
+semestre = int(input("Qué semestre cursas? ---> ")
+print("Curso " + carrera + " y voy en " + semestre " semestre")
+
+
+-----------------------------------------------------------------
+
+A) Curso Ingeniería en Computación y voy en 2 semestre
+B) Curso carrera y voy en semestre semestre
+C) str(input("¿Qué carrera estás cursando? ---> "))
+D) Da error
