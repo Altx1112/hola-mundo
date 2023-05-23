@@ -1,0 +1,15 @@
+Ahora intentalo tu, en tu, observa el siguiente código y piensa
+¿que es lo que imprime?:
+
+Sintaxis:
+int i = 0;
+while (i < 5) 
+{
+  printf("%i, ", i);
+  i++;
+}
+-----------------------------------------------------------------
+A) 1, 2, 3, 4, 5
+B) Hola mundo
+C) 5, 4, 3, 2, 1
+D) 0, 1, 2, 3, 4

@@ -1,15 +1,19 @@
-Uso de for: For es una herramienta que nos permite crear un 
-ciclo finito,comunmente se usa para recorrer una estructura
+                          Uso de for:
+For es una herramienta que nos permite crear un ciclo finito,
+comunmente se usa para recorrer una estructura
 de datos y hace una accion hasta llegar al ultimo elemento
 de esa estructura.
+
 Sintaxis:
-for variable in ciclo:
-	instrucciones;
-¿Qué mostrará en pantalla el siguiente codigo?
-frase = ["hola", "como", "estas"];
-for posicion in frase:
-    print(posicion);
-A:posicion
-B:hola
-C:frase
-D:hola,como,estas
+for variable in rango:
+
+Ejemplo:
+for i in range(5):
+    print(i)
+
+Output:
+0
+1
+2
+3
+4

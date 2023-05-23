@@ -1,0 +1,14 @@
+                    ¿Cómo funcinan las computadoras?
+Si bien las instrucciones en las primeras máquinas debían ser 
+ingresadas en ceros y unos, los computadores actuales son capaces 
+de transformar las palabras, números e instrucciones que 
+ingresamos a bits (dígitos binarios). Así, cada computador debe 
+traducir uno o más lenguajes en código binario para poder 
+funcionar.
+
+Los programas o softwares son el conjunto de instrucciones que le 
+dicen al computador qué debe hacer.
+
+Sin ellos, el computador es una máquina inútil. Hay diferentes 
+clases de programas. Las dos principales categorías son los 
+sistemas operativos y el software aplicativo o aplicaciones.

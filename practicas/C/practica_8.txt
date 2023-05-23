@@ -1,0 +1,16 @@
+Ahora intentalo tu, observa el siguiente código y piensa
+¿que es lo que imprime?:
+
+int main() 
+{
+  for (int i=10; i<15; i++) 
+  {
+    printf("%i, ", i);
+  }
+  return 0;
+}
+-----------------------------------------------------------------
+A) 10, 11, 12, 13, 14
+B) 11, 12, 13, 14, 15
+C) 0, 1, 2, 3, 4, 5
+D) No imprime nada

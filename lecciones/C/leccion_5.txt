@@ -1,0 +1,16 @@
+                             Uso de Switch
+Switch es una estructura de condiciones, a diferencia de if
+esta funciona a través de etiquetas, por lo que no sirven las
+comparaciones, es útil cuando queremos comparar enteros o char
+específicos.
+
+Sintaxis:
+switch(variable):
+    case condicion_1:
+        break; //Rompe el ciclo switch cuando termine de
+               //ejecutar
+    case condicion_2:
+	break;
+
+    default: //Funciona como un else
+	break;

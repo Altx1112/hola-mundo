@@ -1,0 +1,17 @@
+                          Uso de funciones
+Las funciones son un bloque de instrucciones que hacen una tarea 
+especifica. Sirven para agrupar bloques de codigo que se usan 
+frecuentemente y evitar el tener que volver a escribir el codigo, 
+son importantes porque hacen el codigo mas entendibe y mas 
+eficiente.
+
+Sintax: 
+tipo_de_variable identificador (parametros)
+{
+    instrucciones;
+    return; //Regresa un valor
+}
+Es importante recordar que se debe de invocar la funcion
+para que de los resultados esperados.
+Y aunque no lo hayamos dicho, C siempre ocupa de una función
+especial llamada [main] que sera el inicio del programa.

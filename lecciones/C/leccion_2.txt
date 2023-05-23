@@ -1,0 +1,17 @@
+                     ¿QUE ES?: VARIABLE
+Es un espacio en la memoria en que se almacena un dato, este dato
+puede ser de distintos tipos, cada uno de ellos tiene una -llave-
+que indica en codigo que tipo de dato es, como:
+
+entero (int) 
+decimal (float)
+caracter (char)
+
+cada uno se guarda usando una llave (%i, %f, %c respectivamente)
+
+Ejemplo:
+int x = 1;
+printf("%i", x);
+
+Output:
+1

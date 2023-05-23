@@ -1,0 +1,10 @@
+¿Qué mostrará en pantalla el siguiente codigo?
+
+condicion = str(input("Ingresa x para salir del ciclo"));
+while condicion != "x":
+    condicion = str(input("Ingresa x para salir del ciclo"));
+-----------------------------------------------------------------
+A) Un ciclo infinito que mostrara el texto hasta que se ingrese x
+B) Un ciclo que se repetira hasta que se llene la pantalla
+C) Un ciclo que iniciara al ingresar x
+D) Error

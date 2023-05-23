@@ -1,0 +1,16 @@
+¿Qué mostrará en pantalla el siguiente codigo?
+int ret()
+{
+    return 10;
+}
+
+int main()
+{
+    retornar = ret();
+    printf("%i", retornar);
+}
+-----------------------------------------------------------------
+A) Nada
+B) return
+C) ret();
+D) 10

@@ -1,0 +1,14 @@
+               Tipos de lenguajes de programación
+Lenguaje de alto nivel: Se caracteriza por su fácil legibilidad 
+y ser más amigable con el lenguaje humano, simplificando sus
+funciones, su desventaja es que al ser simples, no se pueden
+realizar trabajos complejos de manipulación de memoria o de
+los componentes de las computadoras
+Ejemplos: Python y C#
+
+Lenguaje de bajo nivel: Se caracterizan por tener mejor control
+de la computadora y poder modificar aspectos más internos de la
+misma, su desventaja es que son más dificiles de leer para una
+persona con poca experiencia, aparte que se requiere de conocer
+cómo manipular cosas como tipos de datos o memoria.
+Ejemplos: C y Assembly (Ensamblador)

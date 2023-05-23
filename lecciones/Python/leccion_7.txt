@@ -1,18 +1,16 @@
-Uso de funciones: Las funciones son un bloque de instrucciones 
-que hacen una tarea especifica.Sirven para agrupar bloques de 
-codigo que se usan frecuentemente y evitar el tener que volver
-a escribir el codigo,son importantes porque hacen el codigo 
-mas entendibe y mas eficiente.
-Sintax: def identificador (parametros):
+                     Uso de funciones:
+Las funciones son un bloque de instrucciones que hacen una tarea
+especifica. Sirven para agrupar bloques de codigo que se usan 
+frecuentemente y evitar el tener que volver a escribir el 
+codigo, son importantes porque hacen el codigo mas entendibe y 
+mas eficiente.
+
+Sintax: 
+def identificador (parametros):
 	instrucciones;
-	return;(Regresa un valor)
-indentificador();
+	return #Regresa un valor
+
+indentificador()
+
 Es importante recordar que se debe de invocar la funcion
 para que de los resultados esperados
-¿Qué mostrará en pantalla el siguiente codigo?
-def funcion();
-	print("Soy una funcion");
-A:Nada
-B:Soy una funcion
-C:funcion();
-D:Lo que este dentro de los parentesis de funcion():

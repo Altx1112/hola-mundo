@@ -1,0 +1,17 @@
+                     USO DEL CICLO FOR 
+Cuando sabemos cuantas veces queremos repetir una accion en un 
+ciclo, usamos el for o for loop, este permite recorrer posiciones
+en un rango, sus sintaxis es la siguiente:
+
+Sintaxis:
+for (int declarar; condicion; iterador)
+{
+    //Bloque de codigo que indica la acción.
+}
+
+Expliquemos: se usa la palabra reservada for, seguido de un
+parentesis que contiene a tres sentencias, la primera indica el
+valor de nuestro iterador, la segunda indica su condicion y la 
+tercera indica una acción, esta es el contador permite que el 
+ciclo avance, puede aumentar [++] o disminuir [--].
+

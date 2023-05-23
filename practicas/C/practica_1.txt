@@ -1,0 +1,10 @@
+Ahora intentalo tu, observa el siguiente código y piensa
+¿que es lo que imprime?:
+
+Sintaxis:
+printf("HOLA MUNDO");
+-----------------------------------------------------------------
+A) HOLA
+B) hola mundo
+C) HOLA MUNDO
+D) printf("HOLA MUNDO");

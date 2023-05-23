@@ -1,0 +1,7 @@
+¿Cuál es la forma correcta de importar una Libreria?
+
+-----------------------------------------------------------------
+A) #include <stdio.h>
+B) import <stdio.h>
+C) <stdio.h>
+D) Ninguna de las anteriores

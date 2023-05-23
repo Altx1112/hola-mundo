@@ -1,0 +1,10 @@
+                     USO DE LA FUNCION PRINTF:
+Es una de las funciones mas basicas, nos permite mostrar cosas en
+pantalla, texto, numeros entre otros:
+
+Sintaxis:
+printf("Texto que queramos imprimir");
+
+Expliquemos: se usa la palabra reservada printf, seguido de
+parentesis que contiene lo que se va a imprimir, puede incluir
+-space holders- que permiten imprimir datos segun  los tipos

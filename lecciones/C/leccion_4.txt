@@ -1,0 +1,21 @@
+                     USO DEL CONDICIONAL IF:
+Nos permite comparar dos datos y en base al resultado tomar 
+acciones, para esto empleamos los comparadores numericos: <, <=,
+>, >=, == y != (menor que, menor o igual que, mayor que, mayor o
+igual que, igual y distinto respectivamente), si se cumple la 
+condicion sigue una accion, si no pasa al -else- que ejecuta otra
+acción si la condicion no se cumple.
+
+Sintaxis:
+if (condicion)
+{
+    //Bloque de codigo que se ejecuta si la condicion 
+    //enuciada resulta cierta.
+}
+else 
+{
+    //Bloque de codigo que se ejecuta si la condicion 
+    //enuciada resulta falsa.
+}
+
+

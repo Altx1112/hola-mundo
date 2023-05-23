@@ -1,0 +1,17 @@
+Ahora intentalo en tu computadora, observa el siguiente código y 
+piensa ¿que es lo que imprime?:
+
+int hora = 20;
+if (hora < 18) 
+{
+  printf("Buenos dias");
+} 
+else 
+{
+  printf("Buenas noches");
+}
+-----------------------------------------------------------------
+A) Buenos dias
+B) Buenas noches
+C) hora = 20
+D) No imprime nada

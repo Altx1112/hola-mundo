@@ -1,0 +1,17 @@
+Para reforzar lo aprendido ¿Qué ejecuta el siguiente código?
+int x = 1;
+switch(x)
+    case 0:
+	printf("Soy este");
+	break;
+    case 1:
+	printf("No, soy este");
+	break;
+    default:
+	printf("Pues ninguno");
+	break;
+-----------------------------------------------------------------
+A) Soy este
+B) No, soy este
+C) Pues ninguno
+D) No imprime nada

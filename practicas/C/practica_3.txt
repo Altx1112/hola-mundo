@@ -1,0 +1,13 @@
+Ahora intentalo tu, observa el siguiente código y piensa
+¿Qué es lo que imprime? [Suponiendo que el usuario
+ingresa 13]
+
+int Num;
+printf("Ingresa un numero: ");
+scanf("%i", &Num);
+printf("%i", Num)
+-----------------------------------------------------------------
+A) Num
+B) 13
+C) Ingresa un numero: 
+D) No imprime nada

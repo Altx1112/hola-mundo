@@ -1,0 +1,10 @@
+¿Qué mostrará en pantalla el siguiente codigo?
+
+frase = ["hola", "como", "estas"];
+for posicion in frase:
+    print(posicion)
+-----------------------------------------------------------------
+A) posicion
+B) hola
+C) frase
+D) hola\n como\n estas\n

@@ -1,0 +1,15 @@
+                     USO DEL CICLO WHILE
+while es una estructura que nos permite hacer ciclos, solamente
+necesitando una condición para seguir ciclando, existe otra
+que es el do while, que a diferencia del while sólo, este primero
+ejecuta antes de comprobar si se cumple la condición.
+
+Sintaxis:
+while(condicion)
+{
+    //código a ejecutar
+}
+do
+{
+    //código a ejecutar
+}while(condicion);

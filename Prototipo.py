@@ -41,9 +41,45 @@ def ver_leccion(lenguaje, leccion, id): #Imprime la lección en base a los archi
                 case 3:
                     respuesta = 2
 
+                case 4:
+                    respuesta = 0
+
+                case 5:
+                    respuesta = 3
+                
+                case 6:
+                    respuesta = 0
+
         case 2:
             ruta = "lecciones/C/"
             ruta_practicas = "practicas/C/"
+            match leccion:
+                case 0:
+                    respuesta = 2
+
+                case 1:
+                    respuesta = 3
+
+                case 2:
+                    respuesta = 1
+
+                case 3:
+                    respuesta = 1
+
+                case 4:
+                    respuesta = 1
+
+                case 5:
+                    respuesta = 0
+                
+                case 6:
+                    respuesta = 3
+
+                case 7:
+                    respuesta = 0
+
+                case 8:
+                    respuesta = 3
 
     abrir_leccion = str(ruta) + "leccion_" + str(leccion+1) + ".txt" #Conjunta la ruta con el archivo correspondiente
     if lenguaje > 0: #Si es Python o C, Introducción es puro texto
@@ -51,13 +87,14 @@ def ver_leccion(lenguaje, leccion, id): #Imprime la lección en base a los archi
         with open(abrir_practica, "r") as archivo_practica:
             texto_practica = archivo_practica.readlines()
             archivo_practica.close()
+            posicion_inciso = len(texto_practica)-4 #posicion_inciso empieza en los últimos 4 lugares de la lista del texto de práctica
     
     with open(abrir_leccion, "r") as archivo_leccion:
         texto_leccion = archivo_leccion.readlines()
         archivo_leccion.close()
 
     linea = "____________________________________________________________________"
-    posicion, tecla, posicion_pagina, posicion_inciso = 0, 0, False, len(texto_practica)-4 #posicion_inicio empieza en los últimos 4 lugares de la lista del texto de práctica
+    posicion, tecla, posicion_pagina,  = 0, 0, False,  
     while True:
         os.system("cls")
         cuadro()
@@ -117,8 +154,21 @@ def ver_leccion(lenguaje, leccion, id): #Imprime la lección en base a los archi
                         return 0
                     
                     else:
-                        print(f"{Cursor.POS(48, y)}RESPUESTA INCORRECTA")
+                        print(f"{Cursor.POS(70, 25)}RESPUESTA INCORRECTA")
                         time.sleep(2)
+
+                elif not lenguaje:
+                    os.system("cls")
+                    cuadro()
+                    print(f"{Cursor.POS(45, 10)}HAZ COMPLETADO LA LECCIÓN {leccion+1}")
+                    if datos_json["cuentas"][id]["lecciones"][lenguaje] < leccion+1:
+                        datos_json["cuentas"][id]["lecciones"][lenguaje] += 1
+                        with open("cuentas.json", "w") as reemplazo:
+                            json.dump(datos_json, reemplazo, indent=4)
+                            reemplazo.close()
+
+                    time.sleep(2)
+                    return 0
 
         
 
@@ -352,8 +402,6 @@ def login():
 
 def main():
     init(autoreset=True)
-    #login()
-    #menu_lenguajes(0)
-    ver_leccion(1, 3, 0)
+    login()
 
 main()

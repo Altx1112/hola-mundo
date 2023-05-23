@@ -1,0 +1,8 @@
+¿Qué mostrará en pantalla el siguiente codigo?
+def funcion():
+    print("Soy una funcion");
+-----------------------------------------------------------------
+A) Nada porque no se llamo la función
+B) Soy una funcion
+C) funcion()
+D) Lo que este dentro de los parentesis de funcion():

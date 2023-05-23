@@ -1,0 +1,8 @@
+¿Que tipo de dato es el siguiente?
+
+3.1416
+-----------------------------------------------------------------
+A) pi
+B) char
+C) Ninguno
+D) float
