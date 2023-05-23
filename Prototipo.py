@@ -352,7 +352,7 @@ def login():
 
     except:
         with open("cuentas.json", "w") as archivo:
-            cuentas = {"cuentas": [], "lecciones":[2, 6, 8]}
+            cuentas = {"cuentas": [], "lecciones":[3, 7, 9]}
             json.dump(cuentas, archivo, indent=4)
             archivo.close()
             login()
@@ -415,4 +415,5 @@ def login():
 def main():
     init(autoreset=True)
     login()
+
 main()
