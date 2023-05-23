@@ -1,8 +1,27 @@
-from colorama import init, Fore, Back, Cursor
 import msvcrt
 import json
 import os
 import time
+
+def main():
+    init(autoreset=True)
+    login()
+
+try:
+    from colorama import Fore, Back, Cursor, init
+
+except ModuleNotFoundError:
+    print("¡Hola! Esperamos que disfrutes y aprendas con el programa de <HOLA MUNDO>.\n")
+    print("¡Pero antes de entrar, tu primer tarea será instalar la") 
+    print("librería colorama para que el programa muestre colores.\n")
+    print("Para hacerlo sigue las instrucciones:\n")
+    print("[1] Abre la consola de comandos de Windows (Win + R, luego escribir cmd)\n")
+    print("[2] Ingresa el comando tal cual pip install colorama\n")
+    print("[3] Espera a que se complete y listo\n")
+    print("[4] ¡Haz click en cualquier tecla para reiniciar el programa!")
+    msvcrt.getch()
+    main()
+
 
 def cuadro(): #Cuadro que se ve en pantalla con las instrucciones de uso
     linea = "____________________________________________________________________"
@@ -400,8 +419,5 @@ def login():
                     case 3:
                         logup()
 
-def main():
-    init(autoreset=True)
-    login()
 
 main()
