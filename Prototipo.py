@@ -3,10 +3,6 @@ import json
 import os
 import time
 
-def main():
-    init(autoreset=True)
-    login()
-
 try:
     from colorama import Fore, Back, Cursor, init
 
@@ -18,9 +14,8 @@ except ModuleNotFoundError:
     print("[1] Abre la consola de comandos de Windows (Win + R, luego escribir cmd)\n")
     print("[2] Ingresa el comando tal cual pip install colorama\n")
     print("[3] Espera a que se complete y listo\n")
-    print("[4] ¡Haz click en cualquier tecla para reiniciar el programa!")
+    print("[4] ¡Haz click en cualquier tecla y reinicia el programa!")
     msvcrt.getch()
-    main()
 
 
 def cuadro(): #Cuadro que se ve en pantalla con las instrucciones de uso
@@ -188,8 +183,6 @@ def ver_leccion(lenguaje, leccion, id): #Imprime la lección en base a los archi
 
                     time.sleep(2)
                     return 0
-
-        
 
 def menu_lecciones(lenguaje, id):
     with open("cuentas.json", "r") as datos:
@@ -359,7 +352,7 @@ def login():
 
     except:
         with open("cuentas.json", "w") as archivo:
-            cuentas = {"cuentas": [], "lecciones":[]}
+            cuentas = {"cuentas": [], "lecciones":[2, 6, 8]}
             json.dump(cuentas, archivo, indent=4)
             archivo.close()
             login()
@@ -419,5 +412,7 @@ def login():
                     case 3:
                         logup()
 
-
+def main():
+    init(autoreset=True)
+    login()
 main()

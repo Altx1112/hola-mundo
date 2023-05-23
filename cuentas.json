@@ -1,19 +1,8 @@
 {
-    "cuentas": [
-        {
-            "nombre": "Alan",
-            "correo": "alancr612@gmail.com",
-            "contra": "1234",
-            "lecciones": [
-                3,
-                7,
-                9
-            ]
-        }
-    ],
+    "cuentas": [],
     "lecciones": [
-        3,
-        7,
-        9
+        2,
+        6,
+        8
     ]
 }
